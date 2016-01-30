@@ -1,0 +1,35 @@
+<h1>Edit Your User Account</h1>
+<% if session[:id] == @user.id %>
+  <p><a href="/">[ Go Back To Home Page ]</a></p>
+  <p><a href="/users/<%= @user.id %>">[ Cancel Editing ]</a></p>
+
+  <form id="new_user" action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    <label for="the_first_name">Update First Name:<br>
+      <input type="text" name="info[:first_name]" value="<%= @user.try(:first_name) %>">
+    </label><br>
+    <br>
+    <label for="the_last_name">Update Last Name:<br>
+      <input type="text" name="info[:last_name]" value="<%= @user.try(:last_name) %>">
+    </label><br>
+    <br>
+    <label for="the_email">Update Email:<br>
+      <input type="email" name="info[:email]" value="<%= @user.try(:email) %>">
+    </label><br>
+    <br>
+    <label for="the_password">Confirm Your Password:<br>
+      <input type="password" name="password" placeholder="Password">
+    </label><br>
+    <br>
+    <input type="submit" value="Edit Your Info!!">
+  </form>
+  <br>
+  <br>
+  <br>
+<% end %>
+
+<form method="POST" action="/users/<%= @user.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete user account">
+</form>

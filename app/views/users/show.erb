@@ -1,0 +1,20 @@
+<h1>This! Is! YOUR USER ACCOUNT!!!!!!!!!!</h1>
+<a href="/">[ Go Back To Home Page ]</a>
+
+<p>Name:</p>
+<p><%= @user.first_name %> <%= @user.last_name %> </p>
+
+<p>Email:</p>
+<p><%= @user.email %> </p>
+
+<form method="GET" action="/users/<%= @user.id %>/edit">
+  <input type="submit" value="Edit Info">
+</form>
+<br>
+<br>
+<br>
+
+<form method="POST" action="/users/<%= @user.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete user account">
+</form>

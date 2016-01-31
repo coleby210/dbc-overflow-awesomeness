@@ -1,0 +1,25 @@
+<div id="new-question-form-container">
+  <h2>Create your new question!</h2>
+  <div class="errors">
+    <% if @question.errors %>
+      <% @question.errors.full_messages.each do |error| %>
+        <ul><%= error %></ul>
+      <% end %>
+    <% end %>
+  </div>
+
+  <form id="question-form" method="post" action="/questions">
+
+    <label for="question[name]">Name</label>
+    <input type="text" name="question[name]" value="<%= @question.name %>">
+
+    <label for="question[name]">Age</label>
+    <input type="text" name="question[age]" value="<%= @question.age %>">
+
+    <label for="question[name]">Breed</label>
+    <input type="text" name="question[breed]" value="<%= @question.breed %>">
+    <input type="submit" value="CREATE">
+
+  </form>
+
+</div>

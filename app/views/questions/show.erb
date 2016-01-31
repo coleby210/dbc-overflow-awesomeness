@@ -1,1 +1,44 @@
-show.erb
+<h1><%= @question.title %></h1>
+<!-- Underline this ^ -->
+<% positive = (@question.votes.where(positive: true).length - @question.votes.where(positive: false).length) %>
+<%= positive %>
+<p><%= @question.body %></p>
+<div>
+  <p>asked on: <%= @question.created_at %></p>
+  <p>by: <%= @question.user.first_name %> <%= @question.user.last_name %></p>
+  <div>
+    <% @question.comments.each do |comment| %>
+      <%= comment.body %>
+      <p><%= comment.user.first_name %> <%= comment.user.last_name %> <%= comment.created_at %></p>
+    <% end %>
+  </div>
+</div>
+<a class="question-comment" href="whatever">add a comment</a>
+<!-- Underline right here -->
+<% if (@question.answers.length > 0) %>
+<h3><%= @question.answers.length %> Answers</h3>
+<% @question.answers.each do |answer| %>
+<div>
+  <p><%= answer.body %></p>
+  <%= (answer.votes.where(positive: true).length - answer.votes.where(positive: false).length) %>
+  <p>answered on: <%= answer.created_at %></p>
+  <p>by: <%= answer.user.first_name %> <%= answer.user.last_name %></p>
+  <div>
+    <% answer.comments.each do |comment| %>
+      <%= comment.body %>
+      <p><%= comment.user.first_name %> <%= comment.user.last_name %> <%= comment.created_at %></p>
+    <% end %>
+  </div>
+  <a class="answer-comment" href="whatever">add a comment</a>
+</div>
+<% end %>
+<% end %>
+<!-- Another Underline -->
+<div>
+  <h3>Your Answer</h3>
+  <form method="POST" action="/answers">
+    <input type="hidden" name="question_id" value= "<%= @question.id %>">
+    <textarea name="body"></textarea>
+    <input type="submit" value="Submit Answer">
+  </form>
+</div>

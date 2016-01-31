@@ -1,7 +1,12 @@
 <h1>Welcome to DBC Overflow Awesomeness!!!!!!!!!!</h1>
 
-<p>Ask A Question!</p>
+<h3><a id="new-question" href="/questions/new">Create a new question here: Ask A Question!</a></h3>
 
+<div id='questions-list'>
+  <% @questions.each do |each_question| %>
+    <%= erb :"/questions/_each_question_partial", layout: false, locals: {question: each_question} %>
+  <% end %>
+</div>
 
 
 

@@ -1,0 +1,15 @@
+<div id="question<%=question.id%>" class="display-block medium-height full-width">
+  <div id="votes-" class="float-left">
+    <p>[# of votes]</p>
+    <p>votes</p>
+  </div>
+  <div id="answers-" class="float-left">
+    <p>[# of answers]</p>
+    <p>answers</p>
+  </div>
+  <div id="vote-counts-" class="float-left">
+    <p>[OPTIONAL: # of view counts]</p>
+    <p>OPTIONAL: view counts</p>
+  </div>
+  <h3><a href="/questions/<%= question.id%>"><%= question.title %></a></h3>
+</div>

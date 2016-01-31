@@ -14,3 +14,11 @@ th {
 .float-right { float: right; }
 
 .padding-right-small { padding-right: 1.5em; }
+
+.float-left { float: left; }
+
+.display-block { display: block; }
+
+.full-width { width: 100%; }
+
+.medium-height { height: 3em; }

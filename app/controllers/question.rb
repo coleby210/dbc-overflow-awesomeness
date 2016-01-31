@@ -45,7 +45,6 @@ get "/questions/:id" do
   erb :"/questions/show"
 end
 
-=======
 # post '/questions' do
 #   @question = Question.new(params[:question])
 

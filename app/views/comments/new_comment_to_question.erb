@@ -1,0 +1,10 @@
+<!--
+Form to make a new Comment in relation to a Question
+sends to Post route ____ -->
+
+
+<form method="POST" action="/answers">
+    <input type="hidden" name="question_id" value= "<%= @question.id %>">
+    <textarea name="body"></textarea>
+    <input type="submit" value="Submit Answer">
+</form>

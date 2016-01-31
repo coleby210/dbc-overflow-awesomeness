@@ -9,10 +9,11 @@
   <div>
     <% @question.comments.each do |comment| %>
       <%= comment.body %>
+      <p><%= comment.user.first_name %> <%= comment.user.last_name %> <%= comment.created_at %></p>
     <% end %>
   </div>
 </div>
-<a href="whatever">add a comment</a>
+<a class="question-comment" href="whatever">add a comment</a>
 <!-- Underline right here -->
 <% if (@question.answers.length > 0) %>
 <h3><%= @question.answers.length %> Answers</h3>
@@ -28,7 +29,7 @@
       <p><%= comment.user.first_name %> <%= comment.user.last_name %> <%= comment.created_at %></p>
     <% end %>
   </div>
-  <a href="whatever">add a comment</a>
+  <a class="answer-comment" href="whatever">add a comment</a>
 </div>
 <% end %>
 <% end %>
@@ -36,6 +37,7 @@
 <div>
   <h3>Your Answer</h3>
   <form method="POST" action="/answers">
+    <input type="hidden" name="question_id" value= "<%= @question.id %>">
     <textarea name="body"></textarea>
     <input type="submit" value="Submit Answer">
   </form>

@@ -39,7 +39,6 @@ get '/questions/new' do
     @id = session[:id]
     erb :'question/new'
   end
-
 end
 
 # get inputs from form at 'questions/new.erb'

@@ -27,21 +27,22 @@
 </head>
 <body>
   <header class="header-frog-background-img">
-    <h1 class="word-shadow text-center rubik-font">DBC Overflow Awesomeness!!!!!!!!!!</h1>
+    <a href="/"><h1 class="word-shadow text-center rubik-font">DBC Overflow Awesomeness!!!!!!!!!!</h1></a>
 
     <section class="display-inline-block float-right">
-      <% if logged_in? %>
-        <ul><li>
-          <form method="POST" action="/sessions">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Log Out" class="word-shadow">
-        </li></ul>
-      <% else %>
-        <ul>
+      <ul>
+        <% if logged_in? %>
+          <li>
+            <form method="POST" action="/sessions">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Log Out" class="word-shadow">
+          </li>
+        <% else %>
           <li class="display-inline-block float-right padding-right-small"><a href="/sessions/new" class="word-shadow">Log In</a></li>
           <li class="display-inline-block float-right padding-right-small"><a href="/users/new" class="word-shadow">Register</a></li>
-        </ul>
-      <% end %>
+        <% end %>
+        <li class="display-inline-block float-right padding-right-small"><a href="/about" class="word-shadow">About</a></li>
+      </ul>
     </section>
   </header>
 

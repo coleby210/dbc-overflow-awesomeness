@@ -1,12 +1,22 @@
 get '/questions/new' do
-  @question = Question.new
-
-  if request.xhr?
-    erb :"/questions/_new_question_partial", layout: false
+  if !logged_in?
+    redirect '/sessions/new'
   else
-    erb :"/questions/_new_question_partial"
+    @id = session[:id]
+    erb :'question/new'
   end
+
 end
+
+# get '/questions/new' do
+#   @question = Question.new
+
+#   if request.xhr?
+#     erb :"/questions/_new_question_partial", layout: false
+#   else
+#     erb :"/questions/_new_question_partial"
+#   end
+# end
 
 post '/questions' do
   @question = Question.new(params[:question])
@@ -26,15 +36,6 @@ post '/questions' do
   end
 end
 
-get '/questions/new' do
-  if !logged_in?
-    redirect '/sessions/new'
-  else
-    @id = session[:id]
-    erb :'question/new'
-  end
-
-end
 
 # get inputs from form at 'questions/new.erb'
 post '/questions' do

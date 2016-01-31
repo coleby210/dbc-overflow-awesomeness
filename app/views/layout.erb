@@ -7,6 +7,8 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!--
     application.css is where you put your styles
   -->
@@ -15,11 +17,72 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <!--
+    The things that make the header magical...
+  -->
+  <link rel="stylesheet" href="/css/header.css">
+  <script src="/js/shrink-header.js"></script>
+
+  <title>DBC Overflow Awesomeness!!!!!!!!!!</title>
 </head>
 <body>
+  <header class="header-frog-background-img">
+    <h1 class="word-shadow text-center rubik-font">DBC Overflow Awesomeness!!!!!!!!!!</h1>
+
+    <section class="display-inline-block float-right">
+      <% if logged_in? %>
+        <ul><li>
+          <form method="POST" action="/sessions">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Log Out" class="word-shadow">
+        </li></ul>
+      <% else %>
+        <ul>
+          <li class="display-inline-block float-right padding-right-small"><a href="/sessions/new" class="word-shadow">Log In</a></li>
+          <li class="display-inline-block float-right padding-right-small"><a href="/users/new" class="word-shadow">Register</a></li>
+        </ul>
+      <% end %>
+    </section>
+  </header>
+
   <div class="container">
+
+
+
+
     <%= yield %>
+
+    <p><strong>These text from lines 55-85 are for removing.  It's only here to show the scroll/shrink effect.  Scroll down to see the magic in action...</strong></p>
+<p>
+Sed nulla cred Banksy jean shorts. Reprehenderit mumblecore incididunt anim accusamus. Keffiyeh Cosby sweater in cornhole elit, tote bag cillum banjo. Shabby chic YOLO banh mi sunt. Artisan blog Neutra, polaroid adipisicing Banksy +1 lo-fi umami distillery fixie seitan. Semiotics artisan flannel mollit craft beer Blue Bottle. Bespoke biodiesel banh mi literally.
+</p>
+
+<p>
+YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+</p>
+
+<p>
+In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+</p>
+
+<p>
+Sed nulla cred Banksy jean shorts. Reprehenderit mumblecore incididunt anim accusamus. Keffiyeh Cosby sweater in cornhole elit, tote bag cillum banjo. Shabby chic YOLO banh mi sunt. Artisan blog Neutra, polaroid adipisicing Banksy +1 lo-fi umami distillery fixie seitan. Semiotics artisan flannel mollit craft beer Blue Bottle. Bespoke biodiesel banh mi literally.
+</p>
+
+<p>
+YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+</p>
+
+<p>
+In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+</p>
+  <p>
+YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+</p>
+
+<p>
+In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+</p>
   </div>
 </body>
 </html>

@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,300italic,400italic,500);
+
+header {
+  width: 100%;
+  padding: 60px 0;
+  background: #fff;
+  border-bottom: 1px solid #e1e1e1;
+  /* animation magic */
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  z-index: 9999;
+  top: 0;
+  position: fixed;
+}
+
+.header-frog-background-img {
+  background-image: url("/imgs/10662018.jpeg");
+  background-repeat: no-repeat;
+  /*max-width: 150px;
+  max-height: 150px;*/
+
+}
+
+header h1 {
+  font-size: 30px;
+  text-indent: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.shrink {
+  padding: 20px 0;
+}
+
+.rubik-font { font-family: 'Rubik', sans-serif; }
+
+.word-shadow {
+  /* source: http://css3gen.com/text-shadow/ */
+  color: white;
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
+}

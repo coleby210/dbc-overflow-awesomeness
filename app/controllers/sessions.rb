@@ -29,3 +29,8 @@ delete '/sessions' do
   session.delete(:id)
   redirect '/'
 end
+
+# may be a redundant route, check in refactor stage
+get '/sessions/logout' do
+  logout!
+end

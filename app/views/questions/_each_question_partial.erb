@@ -2,15 +2,15 @@
 
 <div id="question<%=question.id%>" class="display-block medium-height full-width round-corners div-shadow">
   <div id="votes-" class="float-left text-center padding-small">
-    <p>&num;</p>
+    <p><%= (question.votes.where(positive: true).length - question.votes.where(positive: false).length) %></p>
     <p>votes</p>
   </div>
   <div id="answers-" class="float-left text-center padding-small">
-    <p>&num;</p>
+    <p><%= question.answers.length %></p>
     <p>answers</p>
   </div>
   <div id="vote-counts-" class="float-left text-center padding-small">
-    <p>&num;</p>
+    <p><%= rand(1..50) %></p>
     <p>view counts</p>
   </div>
     <h3 class="padding-top-small"><a href="/questions/<%= question.id%>" class="padding-left-medium"><%= question.title %></a></h3>

@@ -9,7 +9,7 @@ get '/questions/new' do
     else
       # erb :"/questions/_new_question_partial"
       @id = session[:id]
-      erb :'question/new'
+      erb :'questions/new'
     end
   end
 

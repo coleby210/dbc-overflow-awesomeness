@@ -13,7 +13,7 @@
     <% end %>
   </div>
 </div>
-<a class="question-comment" href="whatever">add a comment</a>
+<a class="question-comment" href="/comments/new/question/<%= @question.id %>">Add a comment!</a>
 <!-- Underline right here -->
 <% if (@question.answers.length > 0) %>
 <h3><%= @question.answers.length %> Answers</h3>
@@ -29,7 +29,7 @@
       <p><%= comment.user.first_name %> <%= comment.user.last_name %> <%= comment.created_at %></p>
     <% end %>
   </div>
-  <a class="answer-comment" href="whatever">add a comment</a>
+  <a class="answer-comment" href="/comments/new/answer/<%= answer.id %>">Add a comment</a>
 </div>
 <% end %>
 <% end %>

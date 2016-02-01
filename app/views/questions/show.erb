@@ -1,10 +1,10 @@
 <h1><%= @question.title %></h1>
 <!-- Underline this ^ -->
-<div class="float-left">
+<div id="question-votes" class="float-left">
   <% positive = (@question.votes.where(positive: true).length - @question.votes.where(positive: false).length) %>
-  <a href="#" class="glyphicon glyphicon-chevron-up"></a><br>
+  <a id="question-up" href="/votes/new/question/<%= @question.id %>/up" class="glyphicon glyphicon-chevron-up"></a><br>
   <%= positive %><br>
-  <a href="#" class="glyphicon glyphicon-chevron-down"></a>
+  <a id="question-down" href="/votes/new/question/<%= @question.id %>/down" class="glyphicon glyphicon-chevron-down"></a>
 </div>
 <%= @question.body %>
 <div>
@@ -21,12 +21,13 @@
 <!-- Underline right here -->
 <% if (@question.answers.length > 0) %>
   <h3><%= @question.answers.length %> Answers</h3>
+  <div id="answer-votes">
   <% @question.answers.each do |answer| %>
     <div>
       <div class="float-left">
-        <a href="#" class="glyphicon glyphicon-chevron-up"></a><br>
+        <a id="answer-up" href="/votes/new/answer/<%= answer.id %>/up" class="glyphicon glyphicon-chevron-up"></a><br>
         <%= (answer.votes.where(positive: true).length - answer.votes.where(positive: false).length) %><br>
-        <a href="#" class="glyphicon glyphicon-chevron-down"></a>
+        <a id="answer-down" href="/votes/new/answer/<%= answer.id %>/down" class="glyphicon glyphicon-chevron-down"></a>
       </div>
       <p><%= answer.body %></p>
       <p>answered on: <%= answer.created_at %></p>
@@ -40,6 +41,7 @@
       <a class="answer-comment" href="whatever">add a comment</a>
     </div>
   <% end %>
+</div>
 <% end %>
 <!-- Another Underline -->
 <div>

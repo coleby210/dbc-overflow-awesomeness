@@ -7,7 +7,7 @@ user = User.new(
   first_name: "Test",
   last_name: "Person",
   email: "test@email.com",
-  password_hash: '1234'
+  password: '1234'
   )
 user.save
 
@@ -60,7 +60,7 @@ Vote.create(
     first_name: Faker::Name.name ,
     last_name: Faker::Address.state,
     email: Faker::Internet.email,
-    password_hash: '1234'
+    password: '1234'
   )
   user.save
 end

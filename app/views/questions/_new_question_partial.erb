@@ -8,18 +8,15 @@
     <% end %>
   </div>
 
-  <form id="question-form" method="post" action="/questions">
-
-    <label for="question[name]">Name</label>
-    <input type="text" name="question[name]" value="<%= @question.name %>">
-
-    <label for="question[name]">Age</label>
-    <input type="text" name="question[age]" value="<%= @question.age %>">
-
-    <label for="question[name]">Breed</label>
-    <input type="text" name="question[breed]" value="<%= @question.breed %>">
-    <input type="submit" value="CREATE">
-
+  <form method="post" action="/questions">
+    <label for="question_title_input">
+    <input type="hidden" name="question[user_id]" value= "<%= @id %>">
+    <input id="question_title_input" name="question[title]" type="text" placeholder="Title" style="width:400px" pattern=".{5,}" required title="No title?  No dice!">
+    <br>
+    <label for="question_text_input">
+      <textarea id="question_text_input" name="question[body]" cols="92" rows="15" placeholder="Post your question here!" pattern=".{10,}" required title="Come on!  Please type a real question!"></textarea>
+    <br>
+    <input type="submit" value="Create a question!">
   </form>
 
 </div>

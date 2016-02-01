@@ -1,0 +1,16 @@
+<!--
+Form to make a new Comment in relation to a Question
+sends to Post route ____ -->
+
+<h1>Make a comment on this Question</h1>
+
+<h3><%= @question.title %></h3>
+<p><%= @question.body %></p>
+
+
+<form method="POST" action="/comments">
+    <input type="hidden" name="commentable_id" value="<%= @question.id %>">
+    <input type="hidden" name="commentable_type" value="Question">
+    <textarea name="body"></textarea>
+    <input type="submit" value="Submit Comment">
+</form>

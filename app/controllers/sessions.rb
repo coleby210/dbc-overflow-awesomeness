@@ -31,6 +31,6 @@ delete '/sessions' do
 end
 
 # may be a redundant route, check in refactor stage
-get '/sessions/logout' do
-  logout!
-end
+# get '/sessions/logout' do
+#   logout!
+# end

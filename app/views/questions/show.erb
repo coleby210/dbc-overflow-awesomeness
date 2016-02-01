@@ -17,7 +17,7 @@
     <% end %>
   </div>
 </div>
-<a class="question-comment" href="whatever">add a comment</a>
+<a class="question-comment" href="/comments/new/question/<%= @question.id %>">Add a comment!</a>
 <!-- Underline right here -->
 <% if (@question.answers.length > 0) %>
   <h3><%= @question.answers.length %> Answers</h3>
